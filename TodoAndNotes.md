@@ -1,0 +1,1 @@
+- implement counter var in wearableData model clean
