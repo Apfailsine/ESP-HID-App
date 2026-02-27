@@ -32,11 +32,11 @@ class BleServiceBlue implements BleServiceInterface {
   //TODO check if this place is best to store this data (const environment variables in seperate file?)
 
   // final String myDeviceName = 'StraightUp';
-  final String _serviceUuid = '12345678-1234-5678-1234-56789abcdef0';
-  final String _charUuidAppSetter = '12345678-1234-5678-1234-56789abcdef1';
+  final String _serviceUuid = 'd12e0660-887f-4107-8b2c-a5c2036616aa';
+  final String _charUuidAppSetter = '523bbab9-09b3-412d-82fd-9a690bc2c6c4';
   // Placeholder for future notify/indicate feedback (e.g., rumble)
   // ignore: unused_field
-  final String _charUuidRumble = '12345678-1234-5678-1234-56789abcdef2';
+  final String _charUuidRumble = 'e7699040-939c-47d8-8264-b2df3198db0e';
 
   // updating and publishing ble connection status
   final StreamController<ConnectionState> _bleConnectionStatusController = StreamController<ConnectionState>.broadcast();

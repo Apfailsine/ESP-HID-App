@@ -9,8 +9,6 @@ import 'package:gamerch_shinyhunter/views/constants/colors.dart';
 class ControllerPage extends StatefulWidget {
   const ControllerPage({super.key});
 
-  final String title = 'Controller';
-
   @override
   State<ControllerPage> createState() => _ControllerPageState();
 }
@@ -20,7 +18,7 @@ class _ControllerPageState extends State<ControllerPage> {
   Timer? _sendTimer;
 
   // Tunable layout spacings
-  final double columnTopPadding = 12;
+  final double columnTopPadding = 0;
   final double columnSpacing = 16;
   final double rowSpacing = 12;
   final double dpadHorizontalGap = 48;
@@ -120,9 +118,6 @@ class _ControllerPageState extends State<ControllerPage> {
   Widget build(BuildContext context) {
     final isLandscape = MediaQuery.of(context).orientation == Orientation.landscape;
     return Scaffold(
-      appBar: AppBar(
-        title: Text(widget.title),
-      ),
       body: Padding(
         padding: isLandscape ? const EdgeInsets.all(16) : const EdgeInsets.fromLTRB(12, 12, 12, 24),
         child: LayoutBuilder(
@@ -154,22 +149,22 @@ class _ControllerPageState extends State<ControllerPage> {
             label: 'L',
             onChanged: (pressed) => _setButton('l', pressed),
             shape: BoxShape.rectangle,
-            width: 140,
-            height: 44,
+            width: 140/2,
+            height: 44/2,
           ),
-          SizedBox(height: 56),
+          SizedBox(height: 56/2),
           JoystickPad(
             onChanged: _onLeftStick,
             baseColor: CustomColors.backgroundWhite,
             knobColor: CustomColors.secondary,
           ),
-          SizedBox(height: 64),
+          SizedBox(height: 64/2),
           DPad(
             onUp: (p) => _setButton('dpadUp', p),
             onDown: (p) => _setButton('dpadDown', p),
             onLeft: (p) => _setButton('dpadLeft', p),
             onRight: (p) => _setButton('dpadRight', p),
-            horizontalGap: dpadHorizontalGap,
+            horizontalGap: dpadHorizontalGap/2,
           ),
         ],
       ),
@@ -178,7 +173,7 @@ class _ControllerPageState extends State<ControllerPage> {
 
   Widget _buildCenterColumn() {
     return Padding(
-      padding: EdgeInsets.only(top: 128),
+      padding: EdgeInsets.only(top: 128/2),
       child: Column(
         mainAxisSize: MainAxisSize.min,
         crossAxisAlignment: CrossAxisAlignment.center,
